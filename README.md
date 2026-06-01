@@ -51,17 +51,13 @@ void loop() {
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-
   duration = pulseIn(echoPin, HIGH);
-
   distance = duration * 0.034 / 2;
 
   Serial.print("Water Level Distance: ");
   Serial.print(distance);
   Serial.println(" cm");
-
   if (distance > 70) {
-    // Low water level
     digitalWrite(redLED, HIGH);
     digitalWrite(yellowLED, LOW);
     digitalWrite(greenLED, LOW);
@@ -72,7 +68,6 @@ void loop() {
     digitalWrite(greenLED, LOW);
   }
   else {
-    // High water level
     digitalWrite(redLED, LOW);
     digitalWrite(yellowLED, LOW);
     digitalWrite(greenLED, HIGH);
