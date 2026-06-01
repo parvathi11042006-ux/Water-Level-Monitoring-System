@@ -45,7 +45,6 @@ void setup() {
 
 void loop() {
 
-  // Trigger ultrasonic pulse
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
 
@@ -53,10 +52,8 @@ void loop() {
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
 
-  // Read echo time
   duration = pulseIn(echoPin, HIGH);
 
-  // Calculate distance in cm
   distance = duration * 0.034 / 2;
 
   Serial.print("Water Level Distance: ");
@@ -70,7 +67,6 @@ void loop() {
     digitalWrite(greenLED, LOW);
   }
   else if (distance > 30 && distance <= 70) {
-    // Medium water level
     digitalWrite(redLED, LOW);
     digitalWrite(yellowLED, HIGH);
     digitalWrite(greenLED, LOW);
