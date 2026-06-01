@@ -81,7 +81,6 @@ void loop() {
   delay(500);
 }
 
-
 ---
 
 ## Result
